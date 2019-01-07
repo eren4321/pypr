@@ -4,7 +4,7 @@ import json
 
 from uygulama.app import slack_client
 
-BOT_TOKEN = "xoxb-372215092436-492081733540-iskEWWZ41fo9woiBs1mN4I3U"
+BOT_TOKEN = "xoxb-372215092436-492081733540-iskEWWZ41fo9woiBs1mN4I3Ue"
 CHANNEL_NAME = "twitter-bottest"
 
 
