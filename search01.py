@@ -6,10 +6,10 @@ from pymongo import MongoClient
 class Bot:
 
     def __init__(self):
-        self.CONSUMER_KEY = "YrP8jnprZn1ouxFB57GBItrW6"
-        self.CONSUMER_KEY_SECRET = "RyiJvk7re05fPYh3LxXNUUmfY4qn8fW6Jza4cNWxGc1DkdBPBI"
-        self.ACCESS_TOKEN = "840827114387562496-zLew76EvM4w99TMGTqI3eX00zOPXdvb"
-        self.ACCESS_TOKEN_SECRET = "dapuxS6sG3r26dZpsfTzeC6uYeJ8jaqDbuc5pjjtr3PkN"
+        self.CONSUMER_KEY = "YrP8jnprZn1ouxFB57GBItrW6e"
+        self.CONSUMER_KEY_SECRET = "RyiJvk7re05fPYh3LxXNUUmfY4qn8fW6Jza4cNWxGc1DkdBPBIe"
+        self.ACCESS_TOKEN = "840827114387562496-zLew76EvM4w99TMGTqI3eX00zOPXdvbe"
+        self.ACCESS_TOKEN_SECRET = "dapuxS6sG3r26dZpsfTzeC6uYeJ8jaqDbuc5pjjtr3PkNe"
         self.api = self.authenticate()
         self.user_list = []
 
