@@ -6,10 +6,10 @@ from pymongo import MongoClient
 class Bot:
 
     def __init__(self):
-        self.CONSUMER_KEY = "YrP8jnprZn1ouxFB57GBItrW6e"
-        self.CONSUMER_KEY_SECRET = "RyiJvk7re05fPYh3LxXNUUmfY4qn8fW6Jza4cNWxGc1DkdBPBIe"
-        self.ACCESS_TOKEN = "840827114387562496-zLew76EvM4w99TMGTqI3eX00zOPXdvbe"
-        self.ACCESS_TOKEN_SECRET = "dapuxS6sG3r26dZpsfTzeC6uYeJ8jaqDbuc5pjjtr3PkNe"
+        self.CONSUMER_KEY = "YrP8jnprZn1ouxFB57GBItrW6"
+        self.CONSUMER_KEY_SECRET = "RyiJvk7re05fPYh3LxXNUUmfY4qn8fW6Jza4cNWxGc1DkdBPBI"
+        self.ACCESS_TOKEN = "840827114387562496-zLew76EvM4w99TMGTqI3eX00zOPXdvb"
+        self.ACCESS_TOKEN_SECRET = "dapuxS6sG3r26dZpsfTzeC6uYeJ8jaqDbuc5pjjtr3PkN"
         self.api = self.authenticate()
         self.user_list = []
 
@@ -27,7 +27,7 @@ class Bot:
             print('Bot basarılı bir sekilde baglandı')
             return api
 
-    def kanald(self, max_tweets=100):
+    def kanald(self, max_tweets=200):
 
         try:
             conn = MongoClient()
@@ -106,7 +106,7 @@ class Bot:
             print('Bot basarılı bir sekilde baglandı')
             return api
 
-    def hurriyet(self, max_tweets=100):
+    def hurriyet(self, max_tweets=200):
 
         try:
             conn = MongoClient()
@@ -184,7 +184,7 @@ class Bot:
             print('Bot basarili bir sekilde baglandi')
             return api
 
-    def cnn(self, max_tweets=100):
+    def cnn(self, max_tweets=200):
 
         try:
             conn = MongoClient()
@@ -257,7 +257,7 @@ class Bot:
             print('Bot basarılı bir sekilde baglandı')
             return api
 
-    def milliyet(self, max_tweets=100):
+    def milliyet(self, max_tweets=200):
 
         try:
             conn = MongoClient()
@@ -298,7 +298,7 @@ class Bot:
                 break
 
             for tweet in reversed(searched_tweets):
-                        db.milliyet.upsert({}, {
+                        db.milliyet.update({}, {
                             "$set": {
                                 'tweet': tweet.full_text,
                                 'retweet': int(tweet.retweet_count),
@@ -315,7 +315,7 @@ class Bot:
 
 
 a = Bot()
-a.milliyet()
 a.cnn()
 a.hurriyet()
 a.kanald()
+a.milliyet()

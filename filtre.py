@@ -23,9 +23,11 @@ with io.open('hurriyet.json', 'w', encoding="utf-8") as f:
         item["_id"] = str(item["_id"])
         item["created"] = ""
         item["tarih"]  =""
+
         print(item)
         f.write("%s\n" % json.dumps(item))
     f.close()
+
 connection = MongoClient('localhost', 27017)
 db = connection.mydatabase
 collection = db.milliyet
@@ -38,12 +40,20 @@ b = []
 # print(favorite)
 for retweet in a:
     b.append(retweet)
-print(b)
+
 
 with io.open('milliyet.json', 'w', encoding="utf-8") as f:
     for item in b:
+
+        item["_id"] = str(item["_id"])
+        item["created"] = ""
+        item["tarih"]  =""
+
+        print(item)
         f.write("%s\n" % json.dumps(item))
     f.close()
+
+
 
 connection = MongoClient('localhost', 27017)
 db = connection.mydatabase
@@ -57,12 +67,20 @@ b = []
 # print(favorite)
 for retweet in a:
     b.append(retweet)
-print(b)
+
 
 with io.open('cnn.json', 'w', encoding="utf-8") as f:
     for item in b:
+
+        item["_id"] = str(item["_id"])
+        item["created"] = ""
+        item["tarih"]  =""
+
+        print(item)
         f.write("%s\n" % json.dumps(item))
     f.close()
+
+
 
 connection = MongoClient('localhost', 27017)
 db = connection.mydatabase
@@ -76,9 +94,16 @@ b = []
 # print(favorite)
 for retweet in a:
     b.append(retweet)
-print(b)
+
 
 with io.open('kanald.json', 'w', encoding="utf-8") as f:
     for item in b:
+
+        item["_id"] = str(item["_id"])
+        item["created"] = ""
+        item["tarih"]  =""
+
+        print(item)
         f.write("%s\n" % json.dumps(item))
     f.close()
+
