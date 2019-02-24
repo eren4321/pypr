@@ -1,0 +1,28 @@
+
+
+def censor(readfile,writefile,mode='r+'):
+    infile = open(readfile,mode)
+    outfile = open(writefile,mode)
+    new_list=[]
+    for line in infile:
+        mylist = line.split()
+        for word in mylist:
+            if string_count(word):
+                word ="XXXX "
+            else:
+                pass
+            new_list.append(word)
+    for word in new_list:
+        outfile.write("{} \n".format(word))
+    infile.close()
+    outfile.close()
+
+def string_count(mystring):
+    if len(mystring)==4:
+        return True
+    else:
+        return False
+
+
+
+censor("hard.txt","cnn.json")
